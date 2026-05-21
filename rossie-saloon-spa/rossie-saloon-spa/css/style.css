@@ -1,0 +1,796 @@
+/* ==========================================================================
+
+  1. VARIABLES GLOBALES Y CONFIGURACIÓN BASE
+
+  ========================================================================== */
+
+:root {
+  --color-primario: #d4a373; /* Dorado/Bronce sutil para detalles y botones */
+
+  --color-secundario: #faedcd; /* Crema/Rosa suave para fondos alternos */
+
+  --color-oscuro: #1a1a1a; /* Negro suave para textos principales */
+
+  --color-claro: #ffffff; /* Blanco puro */
+
+  --color-gris-claro: #f8f9fa; /* Gris muy suave para fondos de tarjetas */
+
+  --color-whatsapp: #25d366; /* Color oficial de WhatsApp */
+
+  --color-telefono: #007bff; /* Color azul para botón de llamadas */
+
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --transicion: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Deslizamiento suave al usar el menú */
+
+  font-family: var(--fuente-principal);
+
+  color: var(--color-oscuro);
+
+  line-height: 1.6;
+}
+
+body {
+  background-color: var(--color-claro);
+
+  margin: 0;
+
+  padding-top: 70px; /* Evita que el menú fijo tape el contenido superior */
+}
+
+img {
+  max-width: 100%;
+
+  display: block;
+
+  height: auto;
+}
+
+ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+/* Títulos Generales */
+
+.section-title {
+  text-align: center;
+
+  font-size: 2.2rem;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--color-oscuro);
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  text-align: center;
+
+  font-size: 1.1rem;
+
+  color: #666;
+
+  margin-bottom: 3rem;
+}
+
+/* Botones Base */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 0.8rem 1.8rem;
+
+  border-radius: 50px;
+
+  font-weight: 600;
+
+  transition: var(--transicion);
+
+  cursor: pointer;
+
+  border: none;
+}
+
+.btn-icon {
+  width: 20px;
+
+  height: 20px;
+}
+
+/* ==========================================================================
+
+  2. ENCABEZADO (HEADER & NAVIGATION)
+
+  ========================================================================== */
+
+.main-header {
+  background-color: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 1rem 2rem;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: var(--color-primario);
+}
+
+.nav-menu ul {
+  display: flex;
+
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-weight: 500;
+
+  transition: var(--transicion);
+}
+
+.nav-menu a:hover {
+  color: var(--color-primario);
+}
+
+/* ==========================================================================
+
+  3. SECCIÓN INICIO (HERO & DESTACADOS)
+
+  ========================================================================== */
+
+.hero-section {
+  position: relative;
+
+  /* Reemplaza assets/images/hero/bg-spa.jpg con tu foto de fondo real */
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/hero/bg-spa.jpg") no-repeat center center/cover;
+
+  min-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: var(--color-claro);
+
+  text-align: center;
+
+  padding: 4rem 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+
+  margin-bottom: 0.5rem;
+
+  letter-spacing: 2px;
+}
+
+.hero-content .tagline {
+  font-size: 1.5rem;
+
+  font-style: italic;
+
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+
+  gap: 1.5rem;
+
+  justify-content: center;
+
+  margin-bottom: 4rem;
+
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+
+  color: var(--color-claro);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd58;
+
+  transform: translateY(-2px);
+}
+
+.btn-phone {
+  background-color: var(--color-claro);
+
+  color: var(--color-oscuro);
+}
+
+.btn-phone:hover {
+  background-color: var(--color-secundario);
+
+  transform: translateY(-2px);
+}
+
+/* Tarjetas Destacados dentro de Inicio */
+
+.destacados-container {
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  padding: 2rem;
+
+  border-radius: 15px;
+
+  max-width: 1000px;
+
+  width: 100%;
+}
+
+.section-title-alt {
+  font-size: 1.8rem;
+
+  margin-bottom: 1.5rem;
+
+  color: var(--color-claro);
+}
+
+.grid-destacados {
+  display: grid;
+
+  grid-template-columns: repeat(3, 100px);
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.card-destacado {
+  background-color: var(--color-claro);
+
+  color: var(--color-oscuro);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  transition: var(--transicion);
+}
+
+.card-destacado:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+  height: 200px;
+
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.card-destacado h3 {
+  font-size: 1.1rem;
+
+  padding: 1rem;
+
+  margin: 0;
+
+  text-align: center;
+}
+
+/* ==========================================================================
+
+  4. SECCIÓN SERVICIOS
+
+  ========================================================================== */
+
+.services-section {
+  padding: 5rem 2rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.service-category {
+  margin-bottom: 4rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+
+  border-bottom: 2px solid var(--color-secundario);
+
+  padding-bottom: 0.5rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-primario);
+}
+
+.grid-services {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 2rem;
+}
+
+.card-service {
+  background-color: var(--color-gris-claro);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  border: 1px solid #eee;
+
+  transition: var(--transicion);
+}
+
+.card-service:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-service img {
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+}
+
+.card-service h4 {
+  font-size: 1.2rem;
+
+  margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.card-service p {
+  font-size: 0.95rem;
+
+  color: #666;
+
+  margin: 0 1rem 1.5rem 1rem;
+}
+
+/* ==========================================================================
+
+  5. SECCIÓN PRODUCTOS (KERALUX)
+
+  ========================================================================== */
+
+.products-section {
+  background-color: var(--color-secundario);
+
+  padding: 5rem 2rem;
+}
+
+.brand-intro {
+  text-align: center;
+
+  max-width: 600px;
+
+  margin: 0 auto 3.5rem auto;
+}
+
+.brand-badge {
+  background-color: var(--color-primario);
+
+  color: var(--color-claro);
+
+  padding: 0.3rem 1rem;
+
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+
+  text-transform: uppercase;
+
+  font-weight: bold;
+}
+
+.brand-intro h2 {
+  font-size: 2.5rem;
+
+  margin-top: 1rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.brand-description {
+  font-size: 1.2rem;
+
+  font-style: italic;
+
+  color: #555;
+}
+
+.grid-products {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 2.5rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.card-product {
+  background-color: var(--color-claro);
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.product-img-wrapper {
+  height: 250px;
+
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex-grow: 1;
+}
+
+.card-product h3 {
+  margin: 0 0 0.5rem 0;
+
+  font-size: 1.3rem;
+}
+
+.brand-name {
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  color: var(--color-primario);
+
+  margin-bottom: 1rem;
+}
+
+.product-desc {
+  color: #666;
+
+  font-size: 0.95rem;
+
+  margin-bottom: 1.5rem;
+
+  flex-grow: 1;
+}
+
+.btn-buy {
+  background-color: var(--color-oscuro);
+
+  color: var(--color-claro);
+
+  border-radius: 8px;
+
+  width: 100%;
+
+  padding: 0.8rem;
+
+  text-align: center;
+
+  font-weight: 600;
+
+  transition: var(--transicion);
+}
+
+.btn-buy:hover {
+  background-color: var(--color-primario);
+}
+
+/* ==========================================================================
+
+  6. SECCIÓN CONTACTO
+
+  ========================================================================== */
+
+.contact-section {
+  padding: 5rem 2rem;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.contact-wrapper {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 3rem;
+
+  align-items: center;
+}
+
+.contact-info-block h3 {
+  font-size: 1.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.contact-list li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  width: 24px;
+
+  height: 24px;
+
+  flex-shrink: 0;
+
+  margin-top: 3px;
+}
+
+.social-links {
+  display: flex;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+}
+
+.social-icon img {
+  width: 32px;
+
+  height: 32px;
+
+  transition: var(--transicion);
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+.btn-whatsapp-large {
+  background-color: var(--color-whatsapp);
+
+  color: var(--color-claro);
+
+  font-size: 1.1rem;
+
+  padding: 1.2rem 2rem;
+
+  width: 100%;
+
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-large:hover {
+  background-color: #1ebd58;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+
+  7. PIE DE PÁGINA (FOOTER)
+
+  ========================================================================== */
+
+.main-footer {
+  background-color: var(--color-oscuro);
+
+  color: rgba(255, 255, 255, 0.7);
+
+  text-align: center;
+
+  padding: 2rem;
+
+  font-size: 0.9rem;
+
+  border-top: 3px solid var(--color-primario);
+}
+
+/* ==========================================================================
+
+  8. COMPONENTE EXTRA: BOTONES FLOTANTES FIJOS
+
+  ========================================================================== */
+
+.floating-buttons-container {
+  position: fixed;
+
+  bottom: 20px;
+
+  right: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  z-index: 2000;
+}
+
+.float-btn {
+  width: 56px;
+
+  height: 56px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  transition: var(--transicion);
+}
+
+.float-btn img {
+  width: 30px;
+
+  height: 30px;
+}
+
+.float-whatsapp {
+  background-color: var(--color-whatsapp);
+}
+
+.float-whatsapp:hover {
+  background-color: #1ebd58;
+
+  transform: scale(1.1);
+}
+
+.float-phone {
+  background-color: var(--color-telefono);
+}
+
+.float-phone:hover {
+  background-color: #0056b3;
+
+  transform: scale(1.1);
+}
+
+/* Ocultar botón flotante de llamada en pantallas grandes (opcional) */
+
+@media (min-width: 769px) {
+  /* Si estás en PC, usualmente no llamas desde la web, así que podrías ocultarlo o dejarlo */
+}
+
+/* ==========================================================================
+
+  9. RESPONSIVE DESIGN (MÓVILES Y TABLETS)
+
+  ========================================================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .header-container {
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding: 1rem;
+  }
+
+  .nav-menu ul {
+    gap: 1rem;
+
+    font-size: 0.95rem;
+  }
+  s .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content .tagline {
+    font-size: 1.1rem;
+  }
+
+  .destacados-container {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
