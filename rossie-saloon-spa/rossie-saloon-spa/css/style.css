@@ -323,17 +323,20 @@ a {
 }
 
 .card-img-wrapper {
-  height: 200px;
+  height: 420px;
 
   overflow: hidden;
 }
 
-.card-img-wrapper img {
+.card-img-wrapper img { 
   width: 100%;
 
   height: 100%;
 
-  object-fit: cover;
+  object-fit: cover; 
+
+  object-position: top center;
+  
 }
 
 .card-destacado h3 {
@@ -571,7 +574,152 @@ a {
 .btn-buy:hover {
   background-color: var(--color-primario);
 }
+/* ==========================================================================
+   5.5. SECCIÓN RESEÑAS / TESTIMONIOS
+   ========================================================================== */
 
+.reviews-section {
+  background-color: var(--color-claro); /* Fondo blanco limpio para contrastar con el fondo crema de productos */
+  padding: 5rem 2rem;
+}
+
+.section-title-wrapper {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.reviews-badge {
+  background-color: var(--color-primario);
+  color: var(--color-claro);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.section-title-wrapper h2 {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-oscuro);
+}
+
+.reviews-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Contenedor Grid adaptable */
+.grid-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de Reseña Individual */
+.card-review {
+  background-color: var(--color-gris-claro); /* Gris suave que combina con tus tarjetas de servicio */
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transicion);
+}
+
+.card-review:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Sistema de Estrellas */
+.review-stars {
+  color: var(--color-primario); /* Usa tu color dorado/bronce para una estética unificada */
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 2px;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  flex-grow: 1;
+}
+
+/* Perfil de la Clienta (Footer de la tarjeta) */
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1.2rem;
+}
+
+.user-img-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-oscuro);
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Adaptación responsive para pantallas más pequeñas (Móviles) */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title-wrapper h2 {
+    font-size: 1.8rem;
+  }
+  
+  .grid-reviews {
+    gap: 1.8rem;
+  }
+  
+  .card-review {
+    padding: 1.8rem 1.5rem;
+  }
+}
 /* ==========================================================================
 
   6. SECCIÓN CONTACTO
