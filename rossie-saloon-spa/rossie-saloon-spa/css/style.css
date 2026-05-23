@@ -363,6 +363,42 @@ a {
   margin: 0 auto;
 }
 
+/* Contenedor colapsable (Oculto por defecto) */
+.service-expanded-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+  padding: 0 1rem;
+}
+
+/* Truco CSS moderno para animar contenido dinámico de altura */
+.card-service.active .service-expanded-content {
+  grid-template-rows: 1fr;
+}
+
+/* Contenedor interno del texto */
+.expanded-inner-text {
+  overflow: hidden;
+  border-top: 1px dashed #eee;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.expanded-inner-text h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-oscuro);
+  font-size: 0.95rem;
+}
+
+.expanded-inner-text ul {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: left;
+}
+
+.expanded-inner-text li {
+  margin-bottom: 0.4rem;
+}
 .service-category {
   margin-bottom: 4rem;
 }
@@ -385,8 +421,15 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
   gap: 2rem;
-}
 
+  align-items: start;
+}
+.card-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+}
 .card-service {
   background-color: var(--color-gris-claro);
 
@@ -412,9 +455,26 @@ a {
 }
 
 .card-service h4 {
-  font-size: 1.2rem;
+  margin: 0 !important; 
+}
 
-  margin: 1rem 1rem 0.5rem 1rem;
+/* Estilos del botón de la flecha */
+.toggle-details-btn {
+  background: none;
+  border: none;
+  color: var(--color-primario);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotación de la flecha cuando esté activo */
+.card-service.active .arrow-icon {
+  transform: rotate(180deg);
 }
 
 .card-service p {

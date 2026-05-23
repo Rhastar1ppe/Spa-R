@@ -299,7 +299,19 @@
       });
     });
   }
-
+/* ── 11. ACCORDION: Detalles desplegables en Servicios ───────── */
+  function initServiceAccordion() {
+   const toggleBtns = document.querySelectorAll('.toggle-details-btn');
+    
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card-service');
+        if (card) {
+          card.classList.toggle('active');
+        }
+      });
+    });
+  }
 
   /* ── INIT ────────────────────────────────────────────────────── */
   function init() {
@@ -313,6 +325,7 @@
     initImageFallbacks();
     initHeroShimmer();
     initCustomCursor();
+    initServiceAccordion(); 
   }
 
   if (document.readyState === 'loading') {
