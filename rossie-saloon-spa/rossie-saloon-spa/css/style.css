@@ -490,7 +490,46 @@ a {
   5. SECCIÓN PRODUCTOS (KERALUX)
 
   ========================================================================== */
+/* --- ETIQUETAS FLOTANTES (BADGES) --- */
 
+/* Hace que los cuadritos se guíen por los límites de la tarjeta */
+.card-product {
+  position: relative;
+}
+
+/* Base general para todos los cuadritos */
+.badge-product {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 5;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  letter-spacing: 0.5px;
+  pointer-events: none; /* Evita que estorbe al hacer click en la tarjeta */
+}
+
+/* 🟢 Color Verde para Más Vendido */
+.badge-top-seller {
+  background-color: #2bb673;
+  color: #ffffff;
+}
+
+/* 🟡 Color Dorado para Recomendado */
+.badge-recommended {
+  background-color: #e5a93b;
+  color: #ffffff;
+}
+
+/* 🔵 Color Azul para Cuidado Esencial */
+.badge-essential {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
 .products-section {
   background-color: var(--color-secundario);
 
