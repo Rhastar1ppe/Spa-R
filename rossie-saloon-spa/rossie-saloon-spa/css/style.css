@@ -204,11 +204,11 @@ a {
 .hero-section {
   position: relative;
 
-  /* Reemplaza assets/images/hero/bg-spa.jpg con tu foto de fondo real */
-
   background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/hero/bg-spa.jpg") no-repeat center center/cover;
+    linear-gradient(rgba(30, 30, 30, 0.65), rgba(30, 30, 30, 0.65)),
+    url("../assets/images/cabecera.png") no-repeat center 15% / cover;
+
+  background-attachment: fixed;
 
   min-height: 90vh;
 
@@ -312,7 +312,7 @@ a {
 
   gap: 1.5rem;
 }
-  
+
 .card-destacado {
   background-color: var(--color-claro);
 
@@ -345,7 +345,6 @@ a {
   object-fit: cover;
 
   object-position: top center;
-
 }
 
 .card-destacado h3 {
