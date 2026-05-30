@@ -588,39 +588,63 @@ a {
   top: 15px;
   left: 15px;
   z-index: 5;
-  padding: 5px 12px;
-  font-size: 0.72rem;
-  font-weight: bold;
+  padding: 6px 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-  letter-spacing: 0.5px;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.6px;
   pointer-events: none;
-  /* Evita que estorbe al hacer click en la tarjeta */
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card-product:hover .badge-product {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 /* 🟢 Color Verde para Más Vendido */
 .badge-top-seller {
-  background-color: #2bb673;
+  background-color: rgba(43, 182, 115, 0.95);
   color: #ffffff;
+  box-shadow: 0 6px 18px rgba(43, 182, 115, 0.3);
 }
 
 /* 🟡 Color Dorado para Recomendado */
 .badge-recommended {
-  background-color: #e5a93b;
+  background-color: rgba(229, 169, 59, 0.95);
   color: #ffffff;
+  box-shadow: 0 6px 18px rgba(229, 169, 59, 0.3);
 }
 
 /* 🔵 Color Azul para Cuidado Esencial */
 .badge-essential {
-  background-color: #4a90e2;
+  background-color: rgba(74, 144, 226, 0.95);
   color: #ffffff;
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.3);
 }
 
 .products-section {
-  background-color: var(--color-secundario);
+  background: linear-gradient(135deg, #f5f1e8 0%, #faf8f3 50%, #f9f5ed 100%);
 
   padding: 5rem 2rem;
+
+  position: relative;
+}
+
+.products-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(212, 163, 115, 0.03) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(212, 163, 115, 0.02) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .brand-intro {
@@ -629,38 +653,67 @@ a {
   max-width: 600px;
 
   margin: 0 auto 3.5rem auto;
+
+  position: relative;
+
+  z-index: 1;
 }
 
 .brand-badge {
-  background-color: var(--color-primario);
+  display: inline-block;
+
+  background: linear-gradient(135deg, var(--color-primario) 0%, #c9956a 100%);
 
   color: var(--color-claro);
 
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1.2rem;
 
-  border-radius: 20px;
+  border-radius: 30px;
 
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 
   text-transform: uppercase;
 
-  font-weight: bold;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.brand-badge:hover {
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
+  transform: translateY(-2px);
 }
 
 .brand-intro h2 {
   font-size: 2.5rem;
 
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+
+  color: var(--color-oscuro);
+
+  letter-spacing: 1px;
+
+  font-weight: 900;
 }
 
 .brand-description {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 
   font-style: italic;
 
-  color: #555;
+  color: #777;
+
+  font-weight: 300;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.3px;
 }
 
 .grid-products {
@@ -668,11 +721,15 @@ a {
 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  gap: 2.5rem;
+  gap: 3rem 2.5rem;
 
   max-width: 1200px;
 
   margin: 0 auto;
+
+  position: relative;
+
+  z-index: 1;
 }
 
 .card-product {
@@ -682,17 +739,57 @@ a {
 
   overflow: hidden;
 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(212, 163, 115, 0.25);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 
+              0 2px 8px rgba(212, 163, 115, 0.1);
 
   display: flex;
 
   flex-direction: column;
+
+  transition: var(--transicion);
+
+  position: relative;
+}
+
+.card-product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 163, 115, 0.3), transparent);
+  pointer-events: none;
+}
+
+.card-product:hover {
+  border-color: rgba(212, 163, 115, 0.45);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 
+              0 4px 12px rgba(212, 163, 115, 0.15);
+  transform: translateY(-5px);
 }
 
 .product-img-wrapper {
   height: 250px;
 
   overflow: hidden;
+
+  background: linear-gradient(135deg, #f9f5ed 0%, #f5f1e8 100%);
+
+  position: relative;
+}
+
+.product-img-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
 }
 
 .product-img-wrapper img {
@@ -701,32 +798,50 @@ a {
   height: 100%;
 
   object-fit: cover;
+
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-product:hover .product-img-wrapper img {
+  transform: scale(1.08);
 }
 
 .product-info {
-  padding: 1.5rem;
+  padding: 2rem 1.8rem;
 
   display: flex;
 
   flex-direction: column;
 
   flex-grow: 1;
+
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 100%);
 }
 
 .card-product h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.8rem 0;
 
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+
+  color: var(--color-oscuro);
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
 }
 
 .brand-name {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 
   font-weight: 700;
 
   color: var(--color-primario);
 
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
 }
 
 .product-desc {
@@ -734,9 +849,11 @@ a {
 
   font-size: 0.95rem;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 
   flex-grow: 1;
+
+  line-height: 1.6;
 }
 
 .btn-buy {
@@ -748,21 +865,288 @@ a {
 
   width: 100%;
 
-  padding: 0.8rem;
+  padding: 1rem;
 
   text-align: center;
 
   font-weight: 600;
 
-  transition: var(--transicion);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  border: 1px solid transparent;
+
+  position: relative;
+
+  overflow: hidden;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 16px rgba(26, 26, 26, 0.15);
+}
+
+.btn-buy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .btn-buy:hover {
   background-color: var(--color-primario);
+
+  border-color: var(--color-primario);
+
+  box-shadow: 0 8px 28px rgba(212, 163, 115, 0.3);
+
+  transform: translateY(-2px);
+}
+
+.btn-buy:hover::before {
+  left: 100%;
 }
 
 /* ==========================================================================
-   5.5. SECCIÓN RESEÑAS / TESTIMONIOS
+   5.5. SECCIÓN SOBRE NOSOTROS
+   ========================================================================== */
+
+.about-section {
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f3 100%);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 163, 115, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Columna izquierda: Imagen */
+.about-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(212, 163, 115, 0.2);
+}
+
+.about-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 163, 115, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.05);
+}
+
+/* Columna derecha: Contenido */
+.about-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-header {
+  margin-bottom: 1rem;
+}
+
+.about-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primario) 0%, #c9956a 100%);
+  color: var(--color-claro);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+  transition: all 0.3s ease;
+}
+
+.about-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
+}
+
+.about-title {
+  font-size: 2.3rem;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--color-oscuro);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-primario);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+}
+
+.about-main-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-main-text p {
+  margin: 0 0 1.2rem 0;
+}
+
+.about-main-text strong {
+  color: var(--color-oscuro);
+  font-weight: 700;
+}
+
+/* Grid de puntos clave */
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.highlight-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  border-left: 3px solid var(--color-primario);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-left-color: #c9956a;
+  box-shadow: 0 4px 16px rgba(212, 163, 115, 0.15);
+  transform: translateX(5px);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-text h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+  color: var(--color-oscuro);
+  font-weight: 700;
+}
+
+.highlight-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* Botones CTA */
+.about-cta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn-about-cta,
+.btn-about-contact {
+  flex: 1;
+  padding: 1.1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-about-cta {
+  background: linear-gradient(135deg, var(--color-primario) 0%, #c9956a 100%);
+  color: var(--color-claro);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.3);
+}
+
+.btn-about-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(212, 163, 115, 0.45);
+}
+
+.btn-about-contact {
+  background: transparent;
+  color: var(--color-oscuro);
+  border-color: rgba(212, 163, 115, 0.5);
+}
+
+.btn-about-contact:hover {
+  border-color: var(--color-primario);
+  background: rgba(212, 163, 115, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.15);
+}
+
+/* ==========================================================================
+   5.6. SECCIÓN RESEÑAS / TESTIMONIOS
    ========================================================================== */
 
 .reviews-section {
@@ -908,6 +1292,39 @@ a {
 
   .card-review {
     padding: 1.8rem 1.5rem;
+  }
+
+  /* Responsive para Sobre Nosotros */
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-about-cta,
+  .btn-about-contact {
+    padding: 0.9rem 1.5rem;
+  }
+
+  .about-section {
+    padding: 4rem 1.5rem;
   }
 }
 
