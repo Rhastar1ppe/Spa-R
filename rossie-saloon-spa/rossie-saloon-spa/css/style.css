@@ -34,7 +34,21 @@
 * {
   box-sizing: border-box;
 }
-
+h1 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+h2 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+h3 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
 html {
   scroll-behavior: smooth;
   /* Deslizamiento suave al usar el menú */
@@ -128,9 +142,9 @@ a {
 }
 
 .btn-icon {
-  width: 20px;
+  width: 23px;
 
-  height: 20px;
+  height: 23px;
 }
 
 /* ==========================================================================
@@ -196,7 +210,6 @@ a {
 }
 
 /* ==========================================================================
-
   3. SECCIÓN INICIO (HERO & DESTACADOS)
 
   ========================================================================== */
@@ -986,6 +999,11 @@ a {
   background-color: #1ebd58;
 
   transform: translateY(-2px);
+}
+.btn-icon-whatsapp {
+  width: 70px;
+
+  height: 70px;
 }
 
 /* ==========================================================================

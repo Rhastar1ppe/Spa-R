@@ -202,7 +202,7 @@
             align-items: center;
             justify-content: center;
             color: rgba(28,26,24,0.35);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: Cormorant Garamond', serif;'
             font-size: 2rem;
             letter-spacing: 0.1em;
           `;
