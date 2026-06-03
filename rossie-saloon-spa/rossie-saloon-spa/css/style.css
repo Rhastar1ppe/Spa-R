@@ -219,7 +219,7 @@ a {
 
   background:
     linear-gradient(rgba(30, 30, 30, 0.65), rgba(30, 30, 30, 0.65)),
-    url("../assets/images/cabecera.png") no-repeat center 15% / cover;
+    url("../assets/images/Saloon.png") no-repeat center 15% / cover;
 
   background-attachment: fixed;
 
@@ -480,7 +480,7 @@ a {
 
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-  gap: 2rem;
+  gap: 1.5rem;
 
   align-items: start;
 }
