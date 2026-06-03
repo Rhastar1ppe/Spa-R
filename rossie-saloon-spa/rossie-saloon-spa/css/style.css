@@ -1154,6 +1154,16 @@ a {
   /* Fondo blanco limpio para contrastar con el fondo crema de productos */
   padding: 5rem 2rem;
 }
+.mapa-section {
+    background-color: var(--color-claro); 
+    padding: 2rem 2rem; 
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
 
 .section-title-wrapper {
   text-align: center;
@@ -1508,6 +1518,23 @@ a {
 
   transform: scale(1.1);
 }
+#mapa{
+  margin: 0;
+  background-color: gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+#mapa h1{
+  text-align: center;
+  color: wheat;
+}
+#frameMapa{
+  border-radius: 5px;
+}
 
 /* Ocultar botón flotante de llamada en pantallas grandes (opcional) */
 
@@ -1555,3 +1582,5 @@ a {
     font-size: 1.8rem;
   }
 }
+
+
